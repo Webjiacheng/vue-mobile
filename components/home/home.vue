@@ -20,10 +20,10 @@
                         </router-link>
                     </li>
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
-                        <a href="#">
+                        <router-link to='/photoshare/photoList'>
                             <span class="mui-icon mui-icon-email"></span>
                             <div class="mui-media-body">图片分享</div>
-                        </a>
+                        </router-link>
                     </li>
                     <li class="mui-table-view-cell mui-media mui-col-xs-4 mui-col-sm-3">
                         <a href="#">
@@ -63,7 +63,7 @@
                 title:'新闻列表'
             }
         },created(){
-            this.$http.get('http://webhm.top:8899/api/getlunbo').then(res=>{
+            this.$http.get(this.config.apiPath+'/api/getlunbo').then(res=>{
                 console.log(res.body);
                 this.list=res.body.message;
                 console.log(res.body.message);

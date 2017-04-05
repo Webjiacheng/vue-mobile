@@ -15,6 +15,7 @@ import headerBar from './components/partials/headerBar.vue';
 //图片列表
 import newList from './components/news/newList.vue';
 import newDetail from './components/news/newdetail.vue';
+import photoList from './components/photoshare/photoList.vue';
 //引入子组件
 import HomeVue from './components/home/home.vue';
 
@@ -28,8 +29,15 @@ Vue.use(MintUI)
 Vue.filter('retime',function (time) {
     return moment(time).format('YYYY-MM-DD');
 })
+Vue.filter('sliceTitle',function (title) {
+    return title.slice(0,15)+'......';
+})
 
 Vue.component('headerBar',headerBar);
+
+Vue.prototype.config={
+    apiPath:'http://webhm.top:8899'
+}
 
 //配置路由
 let router=new VueRouter({
@@ -37,6 +45,7 @@ let router=new VueRouter({
         {name:'home',path: '/home', component: HomeVue},
         {name:'new.list',path: '/news/newlist', component: newList},
         {name:'new.detail',path: '/news/newdetail/:id', component: newDetail},
+        {name:'pohto.share',path: '/photoshare/photoList', component: photoList},
         {name:'default',path: '/', component: HomeVue},
     ]
 });

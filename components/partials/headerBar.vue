@@ -21,5 +21,8 @@
 </script>
 <style>
     /*样式*/
-
+    .mui-title{
+        color: #f14344;
+        font-weight: bold;
+    }
 </style>

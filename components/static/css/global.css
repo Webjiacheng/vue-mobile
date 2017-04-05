@@ -1,3 +1,12 @@
 body {
     background-color: white;
 }
+.tmpl{
+    margin-bottom: 50px;
+}
+li{
+    list-style: none;
+}
+img{
+    vertical-align: top;
+}
